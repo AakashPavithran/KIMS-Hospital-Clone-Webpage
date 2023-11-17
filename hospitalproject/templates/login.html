@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+      
+        input[type=text], input[type=password] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+}
+button {
+    background-color: #aa0404;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+
+  }
+    </style>
+</head>
+<body>
+  <footer class="bg-light text-center text-black">
+    <div class="text-center p-3" style="background-color: rgba(236, 12, 12, 0.89);">
+      <h1><center>Login Page</center></h1> 
+    </div>
+  </footer>
+  <br><br><br><br><br>
+ 
+    <form action="login" method="post" align="center">
+        {% csrf_token %}
+       <b> Username:</b>
+        <input type="text" name="username" ><br>
+        <b>Password:</b>
+        <input type="password" name="password" ><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      {% for msg in messages %}
+      {{msg}}
+      {% endfor %}
+      
+
+      <footer class="bg-light text-center text-white">
+        <div class="text-center p-3" style="background-color: rgba(236, 12, 12, 0.89);">
+           © 2023 Kims Hospital.
+           
+        </div>
+    </footer> 
+
+</body>
+</html>
